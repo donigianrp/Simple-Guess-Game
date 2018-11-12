@@ -1,0 +1,25 @@
+<% if session[:message] %>
+  <%= session.delete(:message) %>
+<% end %>
+<br>
+Player total: $<%= @total %>
+
+<form method="post" action="/bet">
+  <p>
+    <label>Bet:
+      <input name="bet" type="text" />
+    </label>
+  </p>
+  <p>
+    <button name="guess" value="1">Guess 1</button>
+    <button name="guess" value="2">Guess 2</button>
+    <button name="guess" value="3">Guess 3</button>
+  </p>
+</form>
+
+<%= @names %>
+<ul>
+<% @names.each do |name| %>
+  <li><%= p name %></li>
+<% end %>
+</ul>

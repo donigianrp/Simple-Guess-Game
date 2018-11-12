@@ -1,0 +1,11 @@
+<% if session[:message] %>
+  <%= session.delete(:message) %>
+<% end %>
+<br>
+
+<form method="post" action="/broke">
+    <button name="reset">Reset Game</button>
+</form>
+
+
+<%= @test %>
